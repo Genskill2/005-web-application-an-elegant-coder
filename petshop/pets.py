@@ -36,7 +36,7 @@ def search(field, value):
 def dashboard():
     conn = db.get_db()
     cursor = conn.cursor()
-    oby = request.args.get("order_by", "id") # TODO. This is currently not used. 
+    oby = request.args.get("order_by", "id") # TODO. This is currently not used. DONE 
     order = request.args.get("order", "asc")
     if order == "asc":
         cursor.execute(f"select p.id, p.name, p.bought, p.sold, s.name from pet p, animal s where p.species = s.id order by p.{oby}")
@@ -59,7 +59,7 @@ def pet_info(pid):
                 name = name,
                 bought = format_date(bought),
                 sold = format_date(sold),
-                description = description, #TODO Not being displayed
+                description = description, #TODO Not being displayed. DONE
                 species = species,
                 tags = tags)
     return render_template("petdetail.html", **data)

@@ -23,14 +23,14 @@
   </div>
 
   <div class="mb-3">
-    <div class="form-check">
-      {# TODO  Add sold checkbox here #}
+    <div class="form-check-inline">
+      {# TODO  Add sold checkbox here DONE I THINK#}
       <label class="form-check-label" for="sold" > Sold </label><br>
-      {% if sold %}
-      <input id="{{id}}_{{name}}" type="radio" class="form-check-input" name="status" value="{{id}}" checked>
+      {%if sold %}
+      <input id="{{id}}_{{name}}" type="radio" class="form-check-input" name="status" value="{{id}}" checked> 
       {% else %}
       <input id="{{id}}_{{name}}" type="radio" class="form-check-input" name="status" value="{{id}}">
-      {% end if %}
+      {% endif %}
     </div>
   </div>
 
